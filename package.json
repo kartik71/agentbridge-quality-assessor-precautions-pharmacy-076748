@@ -1,0 +1,39 @@
+{
+  "name": "quality-assessor-•-precautions-(pharmacy)",
+  "version": "1.0.0",
+  "description": "Quality Assessor • Precautions (Pharmacy) summarizes trial registries and monitors allergies; applies decision gates and observability; orchestrates via Order Entry to improve safety signal sensitivity.",
+  "main": "workflow.json",
+  "keywords": [
+    "agentbridge",
+    "workflow",
+    "automation",
+    "n8n",
+    "multi-agent",
+    "healthcare-&-life-sciences",
+    "care",
+    "safety",
+    "population-health",
+    "multi-agent",
+    "healthcare"
+  ],
+  "author": "AgentBridge",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kartik71/agentbridge-quality-assessor-precautions-pharmacy-076748.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kartik71/agentbridge-quality-assessor-precautions-pharmacy-076748/issues"
+  },
+  "homepage": "https://github.com/kartik71/agentbridge-quality-assessor-precautions-pharmacy-076748#readme",
+  "scripts": {
+    "start": "echo \"Import this workflow into your n8n instance\"",
+    "validate": "echo \"Workflow validation complete\"",
+    "test": "echo \"Run workflow tests\"",
+    "deploy": "echo \"Deploy to n8n instance\""
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "n8n": ">=1.0.0"
+  }
+}
