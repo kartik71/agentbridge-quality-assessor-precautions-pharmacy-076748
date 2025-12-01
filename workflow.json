@@ -1,0 +1,409 @@
+{
+  "id": "tpl-3794234943",
+  "name": "Quality Assessor • Precautions (Pharmacy)",
+  "description": "Quality Assessor • Precautions (Pharmacy) summarizes trial registries and monitors allergies; applies decision gates and observability; orchestrates via Order Entry to improve safety signal sensitivity.",
+  "industry": "Healthcare & Life Sciences",
+  "pattern": "Multi-Agent",
+  "complexity": "Expert",
+  "rating": 4.7,
+  "downloads": 11352,
+  "favorites": 2610,
+  "executionTime": "6 min",
+  "tags": [
+    "care",
+    "safety",
+    "population-health",
+    "multi-agent",
+    "healthcare"
+  ],
+  "steps": [
+    {
+      "id": "intake",
+      "name": "Case Intake",
+      "description": "Collect, validate and normalize care plans from CPOE; attach a runId and timestamp for traceability."
+    },
+    {
+      "id": "delegate-0",
+      "name": "Delegate",
+      "description": "Execute delegate phase for the Multi-Agent pattern: persist interim state, enforce guardrails, and emit structured JSON results."
+    },
+    {
+      "id": "handoff-1",
+      "name": "Handoff",
+      "description": "Execute handoff phase for the Multi-Agent pattern: persist interim state, enforce guardrails, and emit structured JSON results."
+    },
+    {
+      "id": "monitoring-0",
+      "name": "Monitoring",
+      "description": "Monitoring across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "eligibility-match-1",
+      "name": "Eligibility Match",
+      "description": "Eligibility Match across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "normalization-2",
+      "name": "Normalization",
+      "description": "Normalization across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "documentation-3",
+      "name": "Documentation",
+      "description": "Documentation across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "intervention-4",
+      "name": "Intervention",
+      "description": "Intervention across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "optimization-5",
+      "name": "Optimization",
+      "description": "Optimization across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "finalize",
+      "name": "Compliance Report",
+      "description": "Assemble final payload with status, artifacts, KPIs and audit trail; store to CPOE; return response JSON for the client."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "intake",
+      "type": "agentbridge",
+      "data": {
+        "label": "Case Intake",
+        "description": "Collect, validate and normalize care plans from CPOE; attach a runId and timestamp for traceability.",
+        "nodeType": "input",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 60,
+        "y": 120
+      }
+    },
+    {
+      "id": "delegate-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Delegate",
+        "description": "Execute delegate phase for the Multi-Agent pattern: persist interim state, enforce guardrails, and emit structured JSON results.",
+        "nodeType": "condition",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 310,
+        "y": 120
+      }
+    },
+    {
+      "id": "handoff-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Handoff",
+        "description": "Execute handoff phase for the Multi-Agent pattern: persist interim state, enforce guardrails, and emit structured JSON results.",
+        "nodeType": "a2a",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 560,
+        "y": 120
+      }
+    },
+    {
+      "id": "monitoring-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Monitoring",
+        "description": "Monitoring across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 810,
+        "y": 120
+      }
+    },
+    {
+      "id": "eligibility-match-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Eligibility Match",
+        "description": "Eligibility Match across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1060,
+        "y": 120
+      }
+    },
+    {
+      "id": "normalization-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "Normalization",
+        "description": "Normalization across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1310,
+        "y": 120
+      }
+    },
+    {
+      "id": "documentation-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "Documentation",
+        "description": "Documentation across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1560,
+        "y": 120
+      }
+    },
+    {
+      "id": "intervention-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "Intervention",
+        "description": "Intervention across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1810,
+        "y": 120
+      }
+    },
+    {
+      "id": "optimization-5",
+      "type": "agentbridge",
+      "data": {
+        "label": "Optimization",
+        "description": "Optimization across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2060,
+        "y": 120
+      }
+    },
+    {
+      "id": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "Compliance Report",
+        "description": "Assemble final payload with status, artifacts, KPIs and audit trail; store to CPOE; return response JSON for the client.",
+        "nodeType": "output",
+        "category": "a2a-agents",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2310,
+        "y": 120
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "source": "intake",
+      "target": "delegate-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-1",
+      "source": "delegate-0",
+      "target": "handoff-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-2",
+      "source": "handoff-1",
+      "target": "monitoring-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-3",
+      "source": "monitoring-0",
+      "target": "eligibility-match-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-4",
+      "source": "eligibility-match-1",
+      "target": "normalization-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-5",
+      "source": "normalization-2",
+      "target": "documentation-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-6",
+      "source": "documentation-3",
+      "target": "intervention-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-7",
+      "source": "intervention-4",
+      "target": "optimization-5",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-8",
+      "source": "optimization-5",
+      "target": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    }
+  ],
+  "preview": "Case Intake → Delegate → Handoff → Monitoring → Eligibility Match → Normalization → Documentation → Intervention → Optimization → Compliance Report",
+  "featured": true,
+  "createdAt": "2025-01-14T19:56:19.186Z",
+  "author": "AgentBridge Team",
+  "deployments": 1155,
+  "lastDeployed": "2025-12-01T12:41:19.866Z",
+  "configuration": {
+    "provider": "azure",
+    "region": "us-west-2",
+    "compute": "memory-optimized"
+  },
+  "healthStatus": "healthy",
+  "deploymentCount": 588,
+  "githubRepo": "https://github.com/agentbridge/quality-assessor-•-precautions-(pharmacy)",
+  "maintainer": "AgentBridge Team",
+  "agenticLayers": {
+    "reasoning": {
+      "modelType": "gpt-4o",
+      "reasoningPattern": "ReAct",
+      "contextWindow": 128000,
+      "memorySystem": "hybrid",
+      "decisionFramework": "Multi-Criteria Decision Analysis"
+    },
+    "orchestration": {
+      "workflowEngine": "n8n",
+      "coordinationPattern": "centralized",
+      "failoverStrategy": "retry",
+      "loadBalancing": "intelligent"
+    },
+    "protocol": {
+      "communicationProtocol": "MCP",
+      "messageFormat": "JSON",
+      "authenticationMethod": "OAuth2",
+      "encryptionStandard": "AES-256"
+    },
+    "governance": {
+      "policyEngine": "OPA",
+      "complianceStandards": [
+        "SOC2",
+        "GDPR"
+      ],
+      "auditTrail": true,
+      "riskAssessment": "medium",
+      "dataClassification": "internal"
+    },
+    "observability": {
+      "metricsCollection": "Prometheus",
+      "loggingFramework": "ELK",
+      "tracingSystem": "Jaeger",
+      "alertingRules": [],
+      "dashboardConfig": {
+        "layout": "grid",
+        "widgets": [
+          "metrics",
+          "logs",
+          "traces"
+        ],
+        "refreshInterval": 30
+      }
+    },
+    "intelligence": {
+      "learningCapability": "online",
+      "knowledgeBase": "vector-db",
+      "adaptationMechanism": "ml-based",
+      "performanceOptimization": "ai-driven"
+    }
+  },
+  "businessFunction": "data-preparation-node",
+  "autonomyLevel": "semi-autonomous",
+  "cognitiveCapabilities": [
+    {
+      "name": "Pattern Recognition",
+      "description": "Identifies patterns in business processes",
+      "confidenceLevel": 0.85,
+      "lastUpdated": "2025-12-01T19:56:19.204Z"
+    }
+  ],
+  "roiMetrics": {
+    "costSavings": 105014,
+    "timeReduction": 85,
+    "accuracyImprovement": 20,
+    "throughputIncrease": 58,
+    "errorReduction": 50
+  },
+  "complianceFramework": {
+    "standards": [
+      "SOC2",
+      "GDPR",
+      "ISO27001"
+    ],
+    "certifications": [
+      "SOC2 Type II"
+    ],
+    "auditFrequency": "monthly",
+    "lastAudit": "2025-10-10T04:29:20.568Z"
+  },
+  "scalingPolicy": {
+    "minInstances": 1,
+    "maxInstances": 10,
+    "scaleUpThreshold": 80,
+    "scaleDownThreshold": 20,
+    "cooldownPeriod": 300
+  }
+}
